@@ -7,21 +7,22 @@ const Badge = ({ files }) => {
     const [fileArr, setFileArr] = useState([]);
 
     if (!mounted) {
-
+        const filesArray = []
         for (let file in files) {
             let language = files[file].language;
             //remove duplicate file types
-            if (fileArr.indexOf(language) === -1) {
-               // fileArr.push(language);
-                setFileArr(prev => [...prev,language])
+            if (filesArray.indexOf(language) === -1) {
+                filesArray.push(language);
+
             }
         }
+        setFileArr(filesArray)
     }
 
     useEffect(() => {
         setMounted(true)
     }, []);
-    
+
     return (
         <ul>
             {fileArr.map((language, index) => {
