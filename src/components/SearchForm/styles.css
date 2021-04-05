@@ -1,0 +1,10 @@
+.searchform {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
+.inputText {
+    width: 25%;
+}
